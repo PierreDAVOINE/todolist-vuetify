@@ -1,6 +1,6 @@
 import { createVuetify, ThemeDefinition } from 'vuetify';
 
-const myCustomLightTheme: ThemeDefinition = {
+const myLight: ThemeDefinition = {
   dark: false,
   colors: {
     background: '#FFFFFF',
@@ -18,9 +18,9 @@ const myCustomLightTheme: ThemeDefinition = {
 
 export default createVuetify({
   theme: {
-    defaultTheme: 'myCustomLightTheme',
+    defaultTheme: 'myLight',
     themes: {
-      myCustomLightTheme,
+      myLight,
     },
   },
 });
