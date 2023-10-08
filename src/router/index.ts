@@ -8,9 +8,9 @@ const routes: Array<RouteRecordRaw> = [
     component: TasksList,
   },
   {
-    path: '/parametres',
-    name: 'parametres',
-    component: () => import('../views/SettingsPage.vue'),
+    path: '/pomodoro',
+    name: 'pomodoro',
+    component: () => import('../views/PomodoroPage.vue'),
   },
 ];
 

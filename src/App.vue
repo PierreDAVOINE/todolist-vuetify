@@ -4,7 +4,10 @@
 
     <v-navigation-drawer>
       <v-list>
-        <v-list-item title="Menu"></v-list-item>
+        <v-list-item prepend-icon="mdi-playlist-check" title="To-do list" value="todolist" to="/"
+          color="secondary"></v-list-item>
+        <v-list-item prepend-icon="mdi-clock-check-outline" title="Pomodoro" value="pomodoro" to="/pomodoro"
+          color="secondary"></v-list-item>
       </v-list>
     </v-navigation-drawer>
 
