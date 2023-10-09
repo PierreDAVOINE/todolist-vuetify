@@ -1,13 +1,18 @@
-import TasksList from '@/views/TasksList.vue';
 <template>
   <v-card>
-    <v-card-title>Ma to-do list journalière</v-card-title>
+    <v-card-title>To do :</v-card-title>
     <v-card-text>
       <v-list>
-        <v-list-item v-for="task in tasks" :key="task.id">
-          <v-list-item-content>
-            <v-list-item-title>{{ task.title }}</v-list-item-title>
-          </v-list-item-content>
+        <v-list-item v-for="task in store.state.taskList" :key="task.id">
+
+          <template v-slot:prepend>
+            <v-list-item-action start>
+              <v-checkbox-btn :model-value="task.done" @click="store.commit('updateTaskDone', task)"></v-checkbox-btn>
+            </v-list-item-action>
+          </template>
+
+          <v-list-item-title>{{ task.title }}</v-list-item-title>
+
         </v-list-item>
       </v-list>
     </v-card-text>
@@ -15,14 +20,7 @@ import TasksList from '@/views/TasksList.vue';
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
 import { useStore } from 'vuex';
-
 const store = useStore();
-
-const tasks = computed(() => {
-  return store.state.taskList;
-});
-
 
 </script>

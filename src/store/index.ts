@@ -3,7 +3,7 @@ import { createStore } from 'vuex';
 export default createStore({
   state: {
     taskList: [
-      { id: 1, title: 'Faire la vaisselle', done: false },
+      { id: 1, title: 'Faire la vaisselle', done: true },
       { id: 2, title: 'Do something', done: false },
     ],
   },
@@ -13,6 +13,10 @@ export default createStore({
   mutations: {
     addTask(state, task) {
       state.taskList.push(task);
+    },
+    updateTaskDone(state, task) {
+      const index = state.taskList.findIndex((el) => el.id === task.id);
+      state.taskList[index].done = !task.done;
     },
   },
   actions: {},

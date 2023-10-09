@@ -14,8 +14,8 @@ const vuetify = createVuetify({
 });
 
 createApp(App)
+  .use(store)
   .use(vuetify)
   .use(vuetifyThemes)
-  .use(store)
   .use(router)
   .mount('#app');
