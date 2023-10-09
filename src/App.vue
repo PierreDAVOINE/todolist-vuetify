@@ -26,7 +26,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-const drawer = ref(false)
+const drawer = ref<null | boolean>(null)
 </script>
 
 <style lang="scss" setup></style>
