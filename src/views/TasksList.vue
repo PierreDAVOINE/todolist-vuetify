@@ -15,6 +15,14 @@
 
         </v-list-item>
       </v-list>
+
+      <v-sheet width="300" class="mx-auto">
+
+        <v-form ref="form" @submit.prevent @submit="handleAddTask">
+          <v-text-field v-model="inputValue" :counter="10" label="Nouvelle tâche" required></v-text-field>
+
+        </v-form>
+      </v-sheet>
     </v-card-text>
   </v-card>
 </template>
@@ -22,5 +30,15 @@
 <script lang="ts" setup>
 import { useStore } from 'vuex';
 const store = useStore();
+
+import { ref } from "vue";
+const inputValue = ref('');
+
+const handleAddTask = () => {
+  if (inputValue.value.length > 0) {
+    store.commit("addTask", inputValue.value)
+    inputValue.value = '';
+  }
+}
 
 </script>

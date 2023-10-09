@@ -11,8 +11,12 @@ export default createStore({
     taskList: (state) => state.taskList,
   },
   mutations: {
-    addTask(state, task) {
-      state.taskList.push(task);
+    addTask(state, title) {
+      state.taskList.push({
+        id: state.taskList.length + 1,
+        title,
+        done: false,
+      });
     },
     updateTaskDone(state, task) {
       const index = state.taskList.findIndex((el) => el.id === task.id);
